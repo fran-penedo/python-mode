@@ -38,3 +38,12 @@
 [submodule "submodules/pylama"]
 	path = submodules/pylama
 	url = https://github.com/klen/pylama
+[submodule "submodules/typed_ast"]
+	path = submodules/typed_ast
+	url = https://github.com/python/typed_ast
+[submodule "submodules/mypy_extensions"]
+	path = submodules/mypy_extensions
+	url = https://github.com/python/mypy_extensions
+[submodule "submodules/mypy"]
+	path = submodules/mypy
+	url = https://github.com/python/mypy
