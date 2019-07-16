@@ -16,5 +16,16 @@ def top_function(a, b, c):
     print(c)
 
 
-if __name__ == '__main__':
-    top_function(math.e, 1, 'si')
+def foo(
+    asdfasdfasdfasdf,
+    afdsfsdfasdfasfdf,
+    afdsfadsfasdfa,
+    asdfdfdsafsdasdf,
+    asdfdfddsasfasdf,
+):
+    x = 5
+    return x
+
+
+if __name__ == "__main__":
+    top_function(math.e, 1, "si")
