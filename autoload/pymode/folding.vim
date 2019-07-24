@@ -210,7 +210,8 @@ fun! s:BlockStart(lnum) "{{{
     " Returns the definition statement line which encloses the current line.
 
     let line = getline(a:lnum)
-    if line =~ '^\s*):'
+    if line =~ '^\s*)\( -> .*\|\):'
+    " if line =~ '^\s*):'
         return s:BlockStart(a:lnum - 1)
     endif
     if line !~ s:blank_regex
@@ -241,7 +242,9 @@ fun! s:BlockStart(lnum) "{{{
         call cursor(last_def, 0)
         let last_def_indent = indent(last_def)
         call cursor(last_def, 0)
-        let next_stmt_at_def_indent = searchpos('\v^\s{'.last_def_indent.'}([^[:space:]#\)]|\)[^\:])', 'nW')[0]
+
+        " let next_stmt_at_def_indent = searchpos('\v^\s{'.last_def_indent.'}([^[:space:]#\)]|\)[^\:])', 'nW')[0]
+        let next_stmt_at_def_indent = searchpos('\v^\s{'.last_def_indent.'}([^[:space:]#\)]|\)[^\:[:space:]]|\) [^-]|\) -[^>])', 'nW')[0]
     else
         let next_stmt_at_def_indent = -1
     endif
